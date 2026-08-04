@@ -88,7 +88,7 @@ section { scroll-margin-top: 84px; }
   color: var(--text); letter-spacing: .5px;
 }
 .nav__logo span { color: var(--accent); }
-.nav__links { display: flex; align-items: center; gap: 28px; }
+.nav__links { display: flex; align-items: center; gap: 22px; }
 .nav__links a { color: var(--muted); font-size: .95rem; font-weight: 500; position: relative; }
 .nav__links a:not(.nav__cv)::after {
   content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
@@ -301,6 +301,66 @@ section { scroll-margin-top: 84px; }
 .footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--border); }
 
 /* ============================================================
+   EXPERIENCE TIMELINE
+   ============================================================ */
+.timeline { position: relative; }
+.timeline__item {
+  display: grid; grid-template-columns: 160px 1fr; gap: 28px;
+  padding: 0 0 34px 0; position: relative;
+}
+/* vertical line + dot down the left of the content */
+.timeline__body {
+  position: relative; padding-left: 28px;
+  border-left: 1px solid var(--border);
+}
+.timeline__body::before {
+  content: ""; position: absolute; left: -6px; top: 6px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(110, 168, 254, 0.15);
+}
+.timeline__date {
+  font-family: var(--font-head); font-size: .9rem; color: var(--accent-3);
+  font-weight: 500; padding-top: 2px;
+}
+.timeline__body h3 { font-size: 1.2rem; }
+.timeline__org { color: var(--muted); font-size: .95rem; margin: 3px 0 12px; }
+.timeline__body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.timeline__body li {
+  position: relative; padding-left: 20px; color: #c3cddf; font-size: .96rem;
+}
+.timeline__body li::before {
+  content: "▸"; position: absolute; left: 0; color: var(--accent); opacity: .7;
+}
+
+/* ============================================================
+   SKILLS & EDUCATION
+   ============================================================ */
+.se-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+.se-col__title {
+  font-size: 1.15rem; margin-bottom: 18px; color: var(--text);
+  padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.edu__item { margin-bottom: 20px; }
+.edu__item h4 { font-family: var(--font-head); font-size: 1.05rem; }
+.edu__org { color: var(--accent-3); font-size: .9rem; margin: 2px 0 6px; }
+.edu__note { color: var(--muted); font-size: .88rem; }
+.skill-group { margin-bottom: 18px; }
+.skill-group h4 {
+  font-family: var(--font-head); font-size: .85rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px; font-weight: 500;
+}
+.tags--lang span { color: var(--text); }
+
+/* "To appear" style badge in publications */
+.pub__badge {
+  display: inline-block; font-size: .72rem; font-weight: 600;
+  color: var(--accent-2); background: rgba(177, 140, 255, 0.12);
+  border: 1px solid rgba(177, 140, 255, 0.3);
+  padding: 2px 9px; border-radius: 999px; margin-left: 6px; letter-spacing: .3px;
+}
+
+/* ============================================================
    SCROLL REVEAL ANIMATION
    ============================================================ */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
@@ -314,6 +374,8 @@ section { scroll-margin-top: 84px; }
   .grid--3 { grid-template-columns: 1fr 1fr; }
   .about { grid-template-columns: 1fr; }
   .about__photo { max-width: 220px; }
+  .se-grid { grid-template-columns: 1fr; gap: 36px; }
+  .timeline__item { grid-template-columns: 130px 1fr; gap: 18px; }
 }
 @media (max-width: 680px) {
   .nav__toggle { display: flex; }
@@ -328,6 +390,9 @@ section { scroll-margin-top: 84px; }
   .nav__links.open { opacity: 1; transform: none; pointer-events: auto; }
   .grid--2, .grid--3 { grid-template-columns: 1fr; }
   .hero { padding-top: 110px; }
+  /* stack the timeline: date sits above the content */
+  .timeline__item { grid-template-columns: 1fr; gap: 6px; }
+  .timeline__date { padding-top: 0; }
 }
 
 /* Respect users who prefer no motion */
