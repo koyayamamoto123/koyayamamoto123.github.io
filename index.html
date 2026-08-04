@@ -1,0 +1,324 @@
+<!--
+  ============================================================
+  PERSONAL WEBSITE  —  Koya Yamamoto (edit name below)
+  ------------------------------------------------------------
+  HOW TO EDIT:
+   • Search for the word  EDIT  to find every spot you should
+     personalize (name, bio, projects, publications, links).
+   • Replace the placeholder text between the tags.
+   • Add your CV as  assets/CV.pdf  and your photo as
+     assets/profile.jpg  (see assets/README.txt).
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- EDIT: page title shown in the browser tab -->
+  <title>Koya Yamamoto — Aerospace Engineer</title>
+
+  <!-- EDIT: description helps Google understand your page -->
+  <meta name="description" content="Koya Yamamoto — Aerospace engineer. Research, projects, and publications." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+</head>
+<body>
+
+  <!-- Animated starfield sits behind everything -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <!-- EDIT: your initials / short name for the logo -->
+      <a href="#home" class="nav__logo">KY<span>.</span></a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+        <!-- EDIT: point href to your CV file -->
+        <a href="assets/CV.pdf" class="nav__cv" target="_blank" rel="noopener">CV ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="hero">
+      <div class="hero__content reveal">
+        <p class="hero__eyebrow">Aerospace Engineer · Texas A&amp;M University</p>
+        <!-- EDIT: your name -->
+        <h1 class="hero__name">Koya&nbsp;Yamamoto</h1>
+        <!-- EDIT: one-line tagline about what you do -->
+        <p class="hero__tagline">
+          Designing systems that fly. I research
+          <span class="accent">spacecraft dynamics &amp; control</span>,
+          and build things that reach beyond the atmosphere.
+        </p>
+        <div class="hero__cta">
+          <a href="#research" class="btn btn--primary">Explore my research</a>
+          <a href="assets/CV.pdf" class="btn btn--ghost" target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </div>
+
+      <!-- Decorative orbit/planet -->
+      <div class="orbit" aria-hidden="true">
+        <div class="orbit__planet"></div>
+        <div class="orbit__ring orbit__ring--1"><span class="orbit__moon"></span></div>
+        <div class="orbit__ring orbit__ring--2"><span class="orbit__moon"></span></div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">↓</a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">01</span>
+        <h2>About</h2>
+      </div>
+
+      <div class="about reveal">
+        <div class="about__photo">
+          <!-- EDIT: drop your photo at assets/profile.jpg. Until then a placeholder shows. -->
+          <img src="assets/profile.jpg" alt="Portrait of Koya Yamamoto"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="about__photo-fallback">🧑‍🚀</div>
+        </div>
+        <div class="about__text">
+          <!-- EDIT: write 2–3 short paragraphs about yourself -->
+          <p>
+            I'm an aerospace engineer focused on <strong>guidance, navigation, and
+            control</strong> of spacecraft and autonomous aerial systems. My work
+            bridges rigorous dynamics modeling with practical, flight-ready software.
+          </p>
+          <p>
+            Currently at <strong>Texas A&amp;M University</strong>, I study how vehicles
+            sense their environment and make robust decisions under uncertainty — from
+            orbital rendezvous to atmospheric flight.
+          </p>
+          <p>
+            When I'm not deriving equations of motion, you'll find me building, testing,
+            and occasionally launching things that shouldn't come back down too fast.
+          </p>
+
+          <ul class="about__facts">
+            <li><span>🎓</span> Aerospace Engineering</li>
+            <li><span>🛰️</span> GNC &amp; Dynamics</li>
+            <li><span>📍</span> Texas A&amp;M University</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESEARCH ===================== -->
+    <section id="research" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">02</span>
+        <h2>Research</h2>
+      </div>
+      <p class="section__lead reveal">
+        <!-- EDIT: one sentence describing your research direction -->
+        My research spans the control, estimation, and dynamics of aerospace vehicles.
+        Here are the main areas I work on.
+      </p>
+
+      <div class="grid grid--3">
+        <!-- EDIT each card: icon, title, description -->
+        <article class="card reveal">
+          <div class="card__icon">🛰️</div>
+          <h3>Spacecraft GNC</h3>
+          <p>Guidance, navigation, and control for orbital maneuvers, rendezvous, and proximity operations.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon">📡</div>
+          <h3>State Estimation</h3>
+          <p>Kalman filtering and sensor fusion for robust navigation under noisy, uncertain conditions.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__icon">🎯</div>
+          <h3>Optimal Control</h3>
+          <p>Trajectory optimization and model-predictive control for fuel-efficient, constraint-aware flight.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">03</span>
+        <h2>Projects</h2>
+      </div>
+      <p class="section__lead reveal">
+        A selection of things I've designed, simulated, or built.
+      </p>
+
+      <div class="grid grid--2">
+        <!-- EDIT each project card -->
+        <article class="project reveal">
+          <div class="project__media" style="--g1:#1b2a4a; --g2:#4a2b6b;">🚀</div>
+          <div class="project__body">
+            <h3>Reusable Launch Vehicle Simulator</h3>
+            <p>6-DOF flight simulator with powered-descent guidance for a vertical-landing booster.</p>
+            <div class="tags">
+              <span>Python</span><span>Trajectory Opt</span><span>Simulink</span>
+            </div>
+            <div class="project__links">
+              <a href="#" target="_blank" rel="noopener">Code ↗</a>
+              <a href="#" target="_blank" rel="noopener">Details ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__media" style="--g1:#0e3a3a; --g2:#1b4a6b;">🛰️</div>
+          <div class="project__body">
+            <h3>CubeSat Attitude Control</h3>
+            <p>Reaction-wheel-based attitude determination and control system for a 3U CubeSat mission.</p>
+            <div class="tags">
+              <span>C++</span><span>Kalman Filter</span><span>Embedded</span>
+            </div>
+            <div class="project__links">
+              <a href="#" target="_blank" rel="noopener">Code ↗</a>
+              <a href="#" target="_blank" rel="noopener">Details ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__media" style="--g1:#3a2350; --g2:#6b2b4a;">✈️</div>
+          <div class="project__body">
+            <h3>UAV Path Planning</h3>
+            <p>Real-time obstacle-avoiding trajectory generation for a fixed-wing UAV in cluttered airspace.</p>
+            <div class="tags">
+              <span>ROS</span><span>MPC</span><span>Python</span>
+            </div>
+            <div class="project__links">
+              <a href="#" target="_blank" rel="noopener">Code ↗</a>
+              <a href="#" target="_blank" rel="noopener">Details ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__media" style="--g1:#2a2a1b; --g2:#5a3b1b;">🌍</div>
+          <div class="project__body">
+            <h3>Orbital Rendezvous Study</h3>
+            <p>Fuel-optimal rendezvous and docking analysis using Clohessy–Wiltshire dynamics.</p>
+            <div class="tags">
+              <span>MATLAB</span><span>Astrodynamics</span>
+            </div>
+            <div class="project__links">
+              <a href="#" target="_blank" rel="noopener">Details ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">04</span>
+        <h2>Publications</h2>
+      </div>
+      <p class="section__lead reveal">
+        <!-- EDIT: link to your full scholar profile -->
+        Selected publications. See my full list on
+        <a href="#" target="_blank" rel="noopener">Google Scholar ↗</a>.
+      </p>
+
+      <ol class="pubs">
+        <!-- EDIT each publication. Your name is wrapped in <b> so it stands out. -->
+        <li class="pub reveal">
+          <h3 class="pub__title">A Robust Model-Predictive Guidance Law for Powered Descent</h3>
+          <p class="pub__authors"><b>K. Yamamoto</b>, A. Author, B. Coauthor</p>
+          <p class="pub__venue"><em>Journal of Guidance, Control, and Dynamics</em>, 2025.</p>
+          <div class="pub__links">
+            <a href="#" target="_blank" rel="noopener">PDF</a>
+            <a href="#" target="_blank" rel="noopener">DOI</a>
+            <a href="#" target="_blank" rel="noopener">arXiv</a>
+          </div>
+        </li>
+
+        <li class="pub reveal">
+          <h3 class="pub__title">Adaptive State Estimation for CubeSat Attitude Determination</h3>
+          <p class="pub__authors">C. Researcher, <b>K. Yamamoto</b>, D. Advisor</p>
+          <p class="pub__venue"><em>AIAA SciTech Forum</em>, 2024.</p>
+          <div class="pub__links">
+            <a href="#" target="_blank" rel="noopener">PDF</a>
+            <a href="#" target="_blank" rel="noopener">DOI</a>
+          </div>
+        </li>
+
+        <li class="pub reveal">
+          <h3 class="pub__title">Fuel-Optimal Trajectories for Orbital Rendezvous Under Uncertainty</h3>
+          <p class="pub__authors"><b>K. Yamamoto</b>, E. Colleague</p>
+          <p class="pub__venue"><em>AAS/AIAA Astrodynamics Specialist Conference</em>, 2023.</p>
+          <div class="pub__links">
+            <a href="#" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section section--contact">
+      <div class="section__head reveal">
+        <span class="section__num">05</span>
+        <h2>Get in touch</h2>
+      </div>
+      <p class="section__lead reveal">
+        Interested in collaborating, or just want to talk about spacecraft?
+        I'd love to hear from you.
+      </p>
+
+      <div class="contact-actions reveal">
+        <!-- EDIT: your email -->
+        <a class="btn btn--primary" href="mailto:koyayamamoto123@gmail.com">Email me</a>
+        <a class="btn btn--ghost" href="assets/CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+
+      <ul class="socials reveal">
+        <!-- EDIT each link's href. Remove any you don't use. -->
+        <li><a href="mailto:koyayamamoto123@gmail.com" aria-label="Email" title="Email">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a></li>
+        <li><a href="#" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2 1 8l11 6 9-4.9V17h2V8L12 2zM5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z"/></svg>
+        </a></li>
+        <li><a href="#" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zM7.7 18.3H5.9V7.9h1.8v10.4zM6.8 6.7a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2zm11.6 11.6h-1.8v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7v5.2H11V7.9h1.7v1.4h.1c.4-.7 1.3-1.5 2.7-1.5 2.9 0 3.4 1.9 3.4 4.3v6.2z"/></svg>
+        </a></li>
+        <li><a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3v9zM6.5 8.3a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6S12.5 13 12.5 14.2V19h-3v-9h2.9v1.2h.05a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.65 2 3.65 4.7V19z"/></svg>
+        </a></li>
+        <li><a href="#" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+        </a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Koya Yamamoto · Built with 🚀 and hosted on GitHub Pages</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
