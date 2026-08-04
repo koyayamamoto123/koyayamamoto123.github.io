@@ -1,0 +1,11 @@
+# Treat these as binary so Git never rewrites their bytes (line endings).
+# Without this, small PDFs can be misdetected as text and corrupted.
+*.pdf   binary
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
