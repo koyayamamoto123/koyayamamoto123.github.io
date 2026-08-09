@@ -158,6 +158,24 @@
 })();
 
 /* ============================================================
-   4. Footer year
+   4. Project "Paper ↓" link → scroll to the matching publication
+      and flash it so it's easy to spot.
+   ============================================================ */
+(function paperJump() {
+  document.querySelectorAll('a.paper-jump[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      const target = document.getElementById(link.getAttribute("href").slice(1));
+      if (!target) return;
+      // The href handles the smooth scroll; we just (re)trigger the flash.
+      target.classList.remove("pub--flash");
+      void target.offsetWidth; // force reflow so the animation restarts every click
+      target.classList.add("pub--flash");
+      setTimeout(() => target.classList.remove("pub--flash"), 1900);
+    });
+  });
+})();
+
+/* ============================================================
+   5. Footer year
    ============================================================ */
 document.getElementById("year").textContent = new Date().getFullYear();

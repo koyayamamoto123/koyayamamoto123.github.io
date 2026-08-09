@@ -360,6 +360,16 @@ section { scroll-margin-top: 84px; }
   padding: 2px 9px; border-radius: 999px; margin-left: 6px; letter-spacing: .3px;
 }
 
+/* Flash a publication when a project's "Paper ↓" link jumps to it */
+@keyframes pubFlash {
+  0%   { box-shadow: 0 0 0 0 rgba(110,168,254,0);   border-color: var(--border); background: var(--surface); }
+  15%  { box-shadow: 0 0 0 3px rgba(110,168,254,.35), 0 0 26px rgba(110,168,254,.45); border-color: var(--accent); background: rgba(110,168,254,.10); }
+  40%  { box-shadow: 0 0 0 0 rgba(110,168,254,0);   border-color: var(--border); background: var(--surface); }
+  55%  { box-shadow: 0 0 0 3px rgba(110,168,254,.35), 0 0 26px rgba(110,168,254,.45); border-color: var(--accent); background: rgba(110,168,254,.10); }
+  100% { box-shadow: 0 0 0 0 rgba(110,168,254,0);   border-color: var(--border); background: var(--surface); }
+}
+.pub--flash { animation: pubFlash 1.8s ease; }
+
 /* ============================================================
    SCROLL REVEAL ANIMATION
    ============================================================ */
