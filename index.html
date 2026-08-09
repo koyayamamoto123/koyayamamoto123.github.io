@@ -101,7 +101,10 @@
             differentiation for dynamical systems, and estimation techniques that
             hold up in real, noisy environments. I care deeply about closing the
             gap between elegant theory and flight-ready software — including
-            hardware-in-the-loop validation on real embedded platforms.
+            hardware-in-the-loop validation on real embedded platforms. These same
+            guidance, navigation, and control methods carry over naturally beyond
+            spacecraft — to <strong>drones, automotive, and robotics systems</strong> —
+            and those are areas I'm especially excited to work in.
           </p>
           <p>
             Before Texas A&amp;M, I earned my BS in Mechanical Engineering from
@@ -154,7 +157,7 @@
           <div class="project__body">
             <h3>NLP Solver &amp; Derivative-Accuracy Study</h3>
             <p>A systematic comparison of nonlinear-programming solvers and derivative-approximation accuracy for solving multi-impulse cislunar trajectory-optimization problems.</p>
-            <div class="tags"><span>NLP Solvers</span><span>IPOPT</span><span>SNOPT</span></div>
+            <div class="tags"><span>NLP Solvers</span><span>IPOPT</span><span>fmincon</span></div>
             <div class="project__links">
               <a href="#pub-nlp" class="paper-jump">Paper ↓</a>
             </div>
@@ -177,7 +180,7 @@
         <article class="project reveal">
           <div class="project__media" style="--g1:#1b2a4a; --g2:#5a3b1b;">🔧</div>
           <div class="project__body">
-            <h3>Hardware-in-the-Loop Trajectory Optimization</h3>
+            <h3>Hardware-in-the-Loop Trajectory Optimization with Jacobian Coloring</h3>
             <p>Real-time trajectory optimization with graph-coloring speedups, validated on Arduino &amp; Raspberry Pi to prove control techniques in on-board applications.</p>
             <div class="tags"><span>C++</span><span>Embedded</span><span>Graph Coloring</span></div>
             <div class="project__links">
@@ -191,8 +194,8 @@
           <div class="project__media" style="--g1:#3a2350; --g2:#1b4a6b;">📡</div>
           <div class="project__body">
             <h3>Attitude Estimation from Accelerometers</h3>
-            <p>Covariance analysis of spacecraft attitude estimation using a minimum-accelerometer configuration, quantifying achievable accuracy.</p>
-            <div class="tags"><span>Kalman Filter</span><span>Estimation</span></div>
+            <p>Estimating spacecraft attitude and angular rate from an array of accelerometers, using linear least squares to recover functions quadratic in angular velocity. Establishes minimum sensor requirements and a linearized covariance approximation that matches Monte-Carlo results.</p>
+            <div class="tags"><span>Least Squares</span><span>Covariance Analysis</span><span>Estimation</span></div>
             <div class="project__links">
               <a href="#pub-attitude" class="paper-jump">Paper ↓</a>
               <a href="#" target="_blank" rel="noopener">Slides ↗</a>
@@ -356,8 +359,8 @@
         </li>
 
         <li class="pub reveal" id="pub-attitude">
-          <h3 class="pub__title">Covariance Analysis of Attitude Estimation Using Accelerometers</h3>
-          <p class="pub__authors"><b>K. Yamamoto</b>, P. Kelly, M. Majji</p>
+          <h3 class="pub__title">Covariance Analysis of Attitude and Angular Rate Estimation Using Accelerometers</h3>
+          <p class="pub__authors"><b>K. Yamamoto</b>, P. Kelly, M. Majji, F. Guzmán</p>
           <p class="pub__venue"><em>AAS/AIAA Astrodynamics Specialist Conference</em>, Big Sky, MT, Aug. 2023.</p>
           <div class="pub__links">
             <a href="https://arxiv.org/abs/2502.00513" target="_blank" rel="noopener">arXiv</a>
