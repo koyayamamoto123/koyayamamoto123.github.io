@@ -176,7 +176,9 @@
 })();
 
 /* ============================================================
-   5. Project slides lightbox — opens images in an in-page viewer
+   5. Project slides lightbox — opens slide images in an in-page viewer.
+      A card links with  <a class="slides-link" data-folder="assets/slides/NAME">;
+      the viewer auto-detects slide-1.png, slide-2.png, … in that folder.
    ============================================================ */
 (function slidesLightbox() {
   const box = document.getElementById("lightbox");
@@ -191,10 +193,29 @@
   let slides = [];
   let idx = 0;
 
+  const loadable = (url) =>
+    new Promise((resolve) => {
+      const im = new Image();
+      im.onload = () => resolve(true);
+      im.onerror = () => resolve(false);
+      im.src = url;
+    });
+
+  // Discover slide-1.png, slide-2.png, … in a folder, stopping at the first gap.
+  async function collect(folder) {
+    const urls = [];
+    for (let i = 1; i <= 50; i++) {
+      const url = folder + "/slide-" + i + ".png";
+      if (await loadable(url)) urls.push(url);
+      else break;
+    }
+    return urls;
+  }
+
   function render() {
     if (!slides.length) return;
-    fallback.hidden = true;
     img.hidden = false;
+    fallback.hidden = true;
     img.src = slides[idx];
     counter.textContent = idx + 1 + " / " + slides.length;
     const multi = slides.length > 1;
@@ -202,16 +223,15 @@
     btnNext.style.visibility = multi ? "visible" : "hidden";
   }
 
-  // If a slide image is missing, show a helpful note instead of a broken icon.
-  img.addEventListener("error", () => {
+  function showFallback() {
     img.hidden = true;
     fallback.hidden = false;
-  });
+    counter.textContent = "";
+    btnPrev.style.visibility = "hidden";
+    btnNext.style.visibility = "hidden";
+  }
 
-  function open(list) {
-    slides = list;
-    idx = 0;
-    render();
+  function openBox() {
     box.classList.add("open");
     box.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden"; // lock background scroll
@@ -223,16 +243,31 @@
     img.src = "";
   }
   function go(n) {
+    if (!slides.length) return;
     idx = (idx + n + slides.length) % slides.length; // wrap around
     render();
+  }
+
+  async function openFor(link) {
+    openBox();
+    img.hidden = true;
+    fallback.hidden = true;
+    counter.textContent = "Loading…";
+    const explicit = link.getAttribute("data-slides");
+    const list = explicit
+      ? explicit.split(",").map((s) => s.trim()).filter(Boolean)
+      : await collect(link.getAttribute("data-folder") || "");
+    if (!box.classList.contains("open")) return; // user closed while loading
+    slides = list;
+    idx = 0;
+    if (slides.length) render();
+    else showFallback();
   }
 
   document.querySelectorAll("a.slides-link").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-      const data = (link.getAttribute("data-slides") || "")
-        .split(",").map((s) => s.trim()).filter(Boolean);
-      if (data.length) open(data);
+      openFor(link);
     });
   });
 

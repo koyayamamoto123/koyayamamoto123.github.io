@@ -7,3 +7,6 @@ desktop.ini
 
 # Local dev preview config (not needed on the live site)
 .claude/
+
+# Local helper script (not part of the site)
+add-slide.py
