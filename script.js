@@ -176,6 +176,79 @@
 })();
 
 /* ============================================================
-   5. Footer year
+   5. Project slides lightbox — opens images in an in-page viewer
+   ============================================================ */
+(function slidesLightbox() {
+  const box = document.getElementById("lightbox");
+  if (!box) return;
+  const img = document.getElementById("lbImg");
+  const fallback = document.getElementById("lbFallback");
+  const counter = document.getElementById("lbCounter");
+  const btnPrev = document.getElementById("lbPrev");
+  const btnNext = document.getElementById("lbNext");
+  const btnClose = document.getElementById("lbClose");
+
+  let slides = [];
+  let idx = 0;
+
+  function render() {
+    if (!slides.length) return;
+    fallback.hidden = true;
+    img.hidden = false;
+    img.src = slides[idx];
+    counter.textContent = idx + 1 + " / " + slides.length;
+    const multi = slides.length > 1;
+    btnPrev.style.visibility = multi ? "visible" : "hidden";
+    btnNext.style.visibility = multi ? "visible" : "hidden";
+  }
+
+  // If a slide image is missing, show a helpful note instead of a broken icon.
+  img.addEventListener("error", () => {
+    img.hidden = true;
+    fallback.hidden = false;
+  });
+
+  function open(list) {
+    slides = list;
+    idx = 0;
+    render();
+    box.classList.add("open");
+    box.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden"; // lock background scroll
+  }
+  function close() {
+    box.classList.remove("open");
+    box.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    img.src = "";
+  }
+  function go(n) {
+    idx = (idx + n + slides.length) % slides.length; // wrap around
+    render();
+  }
+
+  document.querySelectorAll("a.slides-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const data = (link.getAttribute("data-slides") || "")
+        .split(",").map((s) => s.trim()).filter(Boolean);
+      if (data.length) open(data);
+    });
+  });
+
+  btnPrev.addEventListener("click", () => go(-1));
+  btnNext.addEventListener("click", () => go(1));
+  btnClose.addEventListener("click", close);
+  box.addEventListener("click", (e) => { if (e.target === box) close(); });
+  document.addEventListener("keydown", (e) => {
+    if (!box.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowLeft") go(-1);
+    else if (e.key === "ArrowRight") go(1);
+  });
+})();
+
+/* ============================================================
+   6. Footer year
    ============================================================ */
 document.getElementById("year").textContent = new Date().getFullYear();

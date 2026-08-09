@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
 </head>
 <body>
@@ -147,7 +147,7 @@
             <div class="tags"><span>MPC</span><span>CasADi</span><span>Trajectory Opt</span></div>
             <div class="project__links">
               <a href="#pub-nmpc" class="paper-jump">Paper ↓</a>
-              <a href="#" target="_blank" rel="noopener">Slides ↗</a>
+              <a href="#" class="slides-link" data-slides="assets/slides/cislunar-mpc/slide-1.png,assets/slides/cislunar-mpc/slide-2.png,assets/slides/cislunar-mpc/slide-3.png">Slides ▸</a>
             </div>
           </div>
         </article>
@@ -465,6 +465,18 @@
     <p>© <span id="year"></span> Koya Yamamoto · Built with 🚀 and hosted on GitHub Pages</p>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <!-- Lightbox: in-page slide viewer for project cards -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Project slides">
+    <button class="lightbox__close" id="lbClose" aria-label="Close slides">×</button>
+    <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Previous slide">‹</button>
+    <figure class="lightbox__stage">
+      <img class="lightbox__img" id="lbImg" alt="Project slide" />
+      <p class="lightbox__fallback" id="lbFallback" hidden>Slide not found — add the images to <code>assets/slides/…</code> (see the README there).</p>
+    </figure>
+    <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Next slide">›</button>
+    <div class="lightbox__counter" id="lbCounter">1 / 1</div>
+  </div>
+
+  <script src="script.js?v=3"></script>
 </body>
 </html>
