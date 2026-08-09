@@ -38,9 +38,8 @@
 
       <nav class="nav__links" id="navLinks">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
+        <a href="#projects">Research Projects</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
         <a href="assets/CV.pdf" class="nav__cv" target="_blank" rel="noopener">CV ↗</a>
@@ -61,7 +60,7 @@
           from theory all the way to hardware.
         </p>
         <div class="hero__cta">
-          <a href="#research" class="btn btn--primary">Explore my research</a>
+          <a href="#projects" class="btn btn--primary">Explore my research</a>
           <a href="assets/CV.pdf" class="btn btn--ghost" target="_blank" rel="noopener">Download CV</a>
         </div>
       </div>
@@ -121,117 +120,17 @@
       </div>
     </section>
 
-    <!-- ===================== RESEARCH ===================== -->
-    <section id="research" class="section">
-      <div class="section__head reveal">
-        <span class="section__num">02</span>
-        <h2>Research</h2>
-      </div>
-      <p class="section__lead reveal">
-        My research develops the algorithms that move spacecraft efficiently and
-        reliably — spanning optimal control, estimation, and the numerical methods
-        underneath them.
-      </p>
-
-      <div class="grid grid--2">
-        <article class="card reveal">
-          <div class="card__icon">🌙</div>
-          <h3>Cislunar Trajectory Optimization</h3>
-          <p>Multi-impulse trajectory optimization and correction for cislunar orbit transfers, using nonlinear and shrinking-horizon MPC to stay on course under maneuver uncertainty.</p>
-        </article>
-
-        <article class="card reveal">
-          <div class="card__icon">🎯</div>
-          <h3>Optimal Control Under Uncertainty</h3>
-          <p>Tube-based and nonlinear model-predictive control that folds uncertainty directly into optimal control and trajectory optimization for robust, real-time guidance.</p>
-        </article>
-
-        <article class="card reveal">
-          <div class="card__icon">∂</div>
-          <h3>High-Precision Differentiation</h3>
-          <p>The Complex-Step (CX) differentiation method and advances in partial-derivative approximation for black-box functions and state-transition-matrix propagation.</p>
-        </article>
-
-        <article class="card reveal">
-          <div class="card__icon">📡</div>
-          <h3>State Estimation</h3>
-          <p>Kalman filtering, smoothing, and covariance analysis — including attitude estimation from minimum-accelerometer configurations and post-filter accuracy gains.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ===================== EXPERIENCE ===================== -->
-    <section id="experience" class="section">
-      <div class="section__head reveal">
-        <span class="section__num">03</span>
-        <h2>Experience</h2>
-      </div>
-      <p class="section__lead reveal">
-        Research and engineering roles across academia and industry, in the US and Japan.
-      </p>
-
-      <div class="timeline">
-        <div class="timeline__item reveal">
-          <span class="timeline__date">Aug 2022 – Present</span>
-          <div class="timeline__body">
-            <h3>Graduate Research Assistant</h3>
-            <p class="timeline__org">Texas A&amp;M University · College Station, TX</p>
-            <ul>
-              <li>Designed nonlinear and shrinking-horizon MPC for trajectory correction under maneuver uncertainty on cislunar orbit transfers.</li>
-              <li>Developed the Complex-Step (CX) differentiation method for highly accurate, efficient derivatives of dynamic systems.</li>
-              <li>Integrated graph-coloring into trajectory optimization for a 2× speedup in real-time path planning, validated in hardware-in-the-loop testing on Arduino &amp; Raspberry Pi.</li>
-              <li>Built a system-identification method approximating complex multidimensional functions with analytical forms; now developing tube-based MPC for cislunar transfers.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline__item reveal">
-          <span class="timeline__date">May – Aug 2023</span>
-          <div class="timeline__body">
-            <h3>Navigation Engineer Intern</h3>
-            <p class="timeline__org">VectorNav Technologies · Dallas, TX</p>
-            <ul>
-              <li>Developed smoothing algorithms for post-Kalman filtering, achieving a 2× improvement in state-estimation accuracy for real-time navigation.</li>
-              <li>Created high-precision geoid-undulation algorithms using the EGM2008 model, deriving recursive formulas for Legendre polynomials.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline__item reveal">
-          <span class="timeline__date">Summer 2021</span>
-          <div class="timeline__body">
-            <h3>Technical Trainee</h3>
-            <p class="timeline__org">JAXA / ISAS · Kanagawa, Japan</p>
-            <ul>
-              <li>Modeled liquid-sloshing effects on spacecraft lunar-landing dynamics with physics-based mass-spring-damper models.</li>
-              <li>Determined system stability boundaries and failure modes through simulation, and proposed control laws for landing-gear systems to prevent overturn.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline__item reveal">
-          <span class="timeline__date">2020 – 2021</span>
-          <div class="timeline__body">
-            <h3>Undergraduate Research Project</h3>
-            <p class="timeline__org">Waseda University · Tokyo, Japan</p>
-            <ul>
-              <li>Designed stratospheric-balloon experiments to validate an alignment-monitoring system.</li>
-              <li>Ran structural analysis for stratospheric conditions (Femap, Nastran) and built &amp; tested physical prototypes.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== PROJECTS ===================== -->
+    <!-- ===================== RESEARCH PROJECTS ===================== -->
     <section id="projects" class="section">
       <div class="section__head reveal">
-        <span class="section__num">04</span>
-        <h2>Projects</h2>
+        <span class="section__num">02</span>
+        <h2>Research Projects</h2>
       </div>
       <p class="section__lead reveal">
-        Selected projects from my research. <!-- EDIT: you'll expand these with
-        write-ups and slides — replace the "#" links below as you add them. -->
+        My work spans cislunar trajectory optimization, optimal control under
+        uncertainty, high-precision differentiation, and state estimation. Below are
+        selected projects across those areas.
+        <!-- EDIT: expand these with write-ups and slides — replace the "#" links as you add them. -->
         Detailed write-ups and slides coming soon.
       </p>
 
@@ -314,10 +213,73 @@
       </div>
     </section>
 
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="section">
+      <div class="section__head reveal">
+        <span class="section__num">03</span>
+        <h2>Experience</h2>
+      </div>
+      <p class="section__lead reveal">
+        Research and engineering roles across academia and industry, in the US and Japan.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <span class="timeline__date">Aug 2022 – Present</span>
+          <div class="timeline__body">
+            <h3>Graduate Research Assistant</h3>
+            <p class="timeline__org">Texas A&amp;M University · College Station, TX</p>
+            <ul>
+              <li>Designed nonlinear and shrinking-horizon MPC for trajectory correction under maneuver uncertainty on cislunar orbit transfers.</li>
+              <li>Developed the Complex-Step (CX) differentiation method for highly accurate, efficient derivatives of dynamic systems.</li>
+              <li>Integrated graph-coloring into trajectory optimization for a 2× speedup in real-time path planning, validated in hardware-in-the-loop testing on Arduino &amp; Raspberry Pi.</li>
+              <li>Built a system-identification method approximating complex multidimensional functions with analytical forms; now developing tube-based MPC for cislunar transfers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal">
+          <span class="timeline__date">May – Aug 2023</span>
+          <div class="timeline__body">
+            <h3>Navigation Engineer Intern</h3>
+            <p class="timeline__org">VectorNav Technologies · Dallas, TX</p>
+            <ul>
+              <li>Developed smoothing algorithms for post-Kalman filtering, achieving a 2× improvement in state-estimation accuracy for real-time navigation.</li>
+              <li>Created high-precision geoid-undulation algorithms using the EGM2008 model, deriving recursive formulas for Legendre polynomials.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal">
+          <span class="timeline__date">Summer 2021</span>
+          <div class="timeline__body">
+            <h3>Technical Trainee</h3>
+            <p class="timeline__org">JAXA / ISAS · Kanagawa, Japan</p>
+            <ul>
+              <li>Modeled liquid-sloshing effects on spacecraft lunar-landing dynamics with physics-based mass-spring-damper models.</li>
+              <li>Determined system stability boundaries and failure modes through simulation, and proposed control laws for landing-gear systems to prevent overturn.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal">
+          <span class="timeline__date">2020 – 2021</span>
+          <div class="timeline__body">
+            <h3>Undergraduate Research Project</h3>
+            <p class="timeline__org">Waseda University · Tokyo, Japan</p>
+            <ul>
+              <li>Designed stratospheric-balloon experiments to validate an alignment-monitoring system.</li>
+              <li>Ran structural analysis for stratospheric conditions (Femap, Nastran) and built &amp; tested physical prototypes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== PUBLICATIONS ===================== -->
     <section id="publications" class="section">
       <div class="section__head reveal">
-        <span class="section__num">05</span>
+        <span class="section__num">04</span>
         <h2>Publications</h2>
       </div>
       <p class="section__lead reveal">
@@ -382,7 +344,7 @@
     <!-- ===================== SKILLS & EDUCATION ===================== -->
     <section id="skills" class="section">
       <div class="section__head reveal">
-        <span class="section__num">06</span>
+        <span class="section__num">05</span>
         <h2>Skills &amp; Education</h2>
       </div>
 
@@ -440,7 +402,7 @@
     <!-- ===================== CONTACT ===================== -->
     <section id="contact" class="section section--contact">
       <div class="section__head reveal">
-        <span class="section__num">07</span>
+        <span class="section__num">06</span>
         <h2>Get in touch</h2>
       </div>
       <p class="section__lead reveal">
