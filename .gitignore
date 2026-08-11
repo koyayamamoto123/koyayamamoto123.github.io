@@ -11,3 +11,6 @@ desktop.ini
 # Local helper scripts (not part of the site)
 add-slide.py
 add-slide.bat
+
+# Draft papers dropped into slide folders — do NOT publish (e.g. under-review PDFs)
+assets/slides/**/*.pdf

@@ -140,6 +140,19 @@
       <div class="grid grid--2">
         <!-- EDIT each project: description, tags, and links (replace # with real URLs) -->
         <article class="project reveal">
+          <div class="project__media" style="--g1:#101b4a; --g2:#2a1b5a;">🪐</div>
+          <div class="project__body">
+            <h3>Uncertainty Propagation with Complex-Step STTs</h3>
+            <p>High-order complex-step (CX) state-transition tensors that propagate orbital uncertainty under J<sub>2</sub> and atmospheric drag — built without a closed-form flow map. Benchmarked across five coordinate sets (Cartesian, COE, MEE, GEqOE, MRP-MEE) against Monte Carlo, matching its accuracy at 1–2 orders of magnitude lower cost.</p>
+            <div class="tags"><span>Complex-Step</span><span>STTs</span><span>Astrodynamics</span></div>
+            <div class="project__links">
+              <a href="#pub-cx-stt" class="paper-jump">Paper ↓</a>
+              <a href="#" class="slides-link" data-folder="assets/slides/cx-uncertainty-propagation">Slides ▸</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
           <div class="project__media" style="--g1:#0e1b3a; --g2:#3a2b6b;">🌙</div>
           <div class="project__body">
             <h3>Cislunar Trajectory Correction via Nonlinear MPC</h3>
@@ -320,6 +333,12 @@
       <ol class="pubs">
         <!-- To add a PDF: put the file in assets/ and add
              <a href="assets/paper.pdf" target="_blank" rel="noopener">PDF</a> -->
+        <li class="pub reveal" id="pub-cx-stt">
+          <h3 class="pub__title">Uncertainty Propagation with Complex-Step State Transition Tensors for Perturbed Orbital Dynamics</h3>
+          <p class="pub__authors"><b>K. Yamamoto</b>, J. L. Junkins, S. Shrivastava</p>
+          <p class="pub__venue"><em>Journal of Guidance, Control, and Dynamics (JGCD)</em>. <span class="pub__badge">Under review</span></p>
+        </li>
+
         <li class="pub reveal" id="pub-nmpc">
           <h3 class="pub__title">Nonlinear MPC for Cislunar Trajectory Correction Under Impulsive Maneuver Uncertainties: A Computational Performance Analysis</h3>
           <p class="pub__authors"><b>K. Yamamoto</b>, E. Taheri, J. L. Junkins</p>
