@@ -156,7 +156,7 @@
           <div class="project__media" style="--g1:#0e1b3a; --g2:#3a2b6b;">🌙</div>
           <div class="project__body">
             <h3>Cislunar Trajectory Correction via Nonlinear MPC</h3>
-            <p>Nonlinear and shrinking-horizon model-predictive control that keeps multi-impulse cislunar transfers on target despite impulsive-maneuver uncertainty.</p>
+            <p>Nonlinear model-predictive control (NMPC) that corrects cislunar transfers in the CR3BP under impulsive-maneuver uncertainty, blending pre-planned impulsive burns with low-thrust NMPC corrections. On a southern L<sub>2</sub> halo-to-halo transfer it holds sub-kilometer tracking error at ~315 m/s total Δv, with IPOPT running up to 2× faster than MATLAB's fmincon.</p>
             <div class="tags"><span>MPC</span><span>CasADi</span><span>Trajectory Opt</span></div>
             <div class="project__links">
               <a href="#pub-nmpc" class="paper-jump">Paper ↓</a>
@@ -169,7 +169,7 @@
           <div class="project__media" style="--g1:#241b3a; --g2:#3a2b5a;">🧮</div>
           <div class="project__body">
             <h3>NLP Solver &amp; Derivative-Accuracy Study</h3>
-            <p>A systematic comparison of nonlinear-programming solvers and derivative-approximation accuracy for solving multi-impulse cislunar trajectory-optimization problems.</p>
+            <p>A systematic comparison of two NLP solvers (MATLAB's fmincon and IPOPT) and three derivative methods — finite-difference, complex-step (CX), and analytical — on a minimum-Δv multi-impulse transfer between two Distant Retrograde Orbits in the CR3BP. The CX method nearly matches analytical derivatives while being far easier to implement, and IPOPT converges faster than fmincon with accurate derivatives.</p>
             <div class="tags"><span>NLP Solvers</span><span>IPOPT</span><span>fmincon</span></div>
             <div class="project__links">
               <a href="#pub-nlp" class="paper-jump">Paper ↓</a>
@@ -182,7 +182,7 @@
           <div class="project__media" style="--g1:#0e3a3a; --g2:#1b4a6b;">∂</div>
           <div class="project__body">
             <h3>High-Precision Partial Derivative Approximation</h3>
-            <p>Advances in high-precision partial-derivative approximation for functions of n variables — accurate, efficient derivatives that outperform finite differences for dynamical systems.</p>
+            <p>An extension of the complex-step method for partial derivatives of smooth vector functions of n variables, with novel multivariable second- and higher-order formulas. In 64-bit arithmetic it reaches ~15-digit accuracy for first derivatives, 10–13 for second, and 5–8 for third — with no operator overloading (MATLAB/Python/C++), far cheaper than automatic differentiation and more accurate than finite differences.</p>
             <div class="tags"><span>Numerical Methods</span><span>MATLAB</span></div>
             <div class="project__links">
               <a href="#pub-blackbox" class="paper-jump">Paper ↓</a>
@@ -467,7 +467,7 @@
         <li><a href="mailto:koyayamamoto123@gmail.com" aria-label="Email" title="Email">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         </a></li>
-        <li><a href="https://www.linkedin.com/in/koyayamamoto" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+        <li><a href="https://www.linkedin.com/in/koya-yamamoto" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3v9zM6.5 8.3a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6S12.5 13 12.5 14.2V19h-3v-9h2.9v1.2h.05a3.2 3.2 0 0 1 2.9-1.6c3.1 0 3.65 2 3.65 4.7V19z"/></svg>
         </a></li>
         <li><a href="https://scholar.google.co.jp/citations?hl=en&amp;user=ha3lGDAAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
