@@ -284,6 +284,32 @@
 })();
 
 /* ============================================================
-   6. Footer year
+   6. Email links: copy address to clipboard + toast.
+      (mailto still fires, so a mail app opens if one is configured)
+   ============================================================ */
+(function emailCopy() {
+  const toast = document.getElementById("toast");
+  let timer;
+  function show(msg) {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(timer);
+    timer = setTimeout(() => toast.classList.remove("show"), 2600);
+  }
+  document.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
+    a.addEventListener("click", () => {
+      const email = a.getAttribute("href").replace("mailto:", "").split("?")[0];
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email)
+          .then(() => show("✉  Email copied to clipboard — " + email))
+          .catch(() => {});
+      }
+    });
+  });
+})();
+
+/* ============================================================
+   7. Footer year
    ============================================================ */
 document.getElementById("year").textContent = new Date().getFullYear();

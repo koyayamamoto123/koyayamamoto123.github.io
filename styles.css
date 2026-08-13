@@ -298,6 +298,22 @@ section { scroll-margin-top: 84px; }
 }
 .socials a:hover { transform: translateY(-4px); border-color: var(--accent); color: #fff; }
 
+.contact-email { margin-top: 18px; color: var(--muted); font-size: .95rem; }
+.contact-email a { color: var(--accent); font-weight: 500; }
+.contact-email a:hover { color: #fff; }
+
+/* Toast — copied-to-clipboard confirmation */
+.toast {
+  position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px);
+  background: rgba(9, 12, 21, 0.96); color: var(--text);
+  border: 1px solid var(--accent); border-radius: 999px;
+  padding: 12px 22px; font-size: .92rem; font-weight: 500;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .5);
+  opacity: 0; pointer-events: none; z-index: 300;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
 .footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size: .88rem; border-top: 1px solid var(--border); }
 
 /* ============================================================
