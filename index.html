@@ -192,11 +192,11 @@
         </article>
 
         <article class="project reveal">
-          <div class="project__media" style="--g1:#1b2a4a; --g2:#5a3b1b;">🔧</div>
+          <div class="project__media" style="--g1:#1b2a4a; --g2:#2a1b5a;">🛰️</div>
           <div class="project__body">
-            <h3>Hardware-in-the-Loop Trajectory Optimization with Jacobian Coloring</h3>
-            <p>Real-time trajectory optimization with graph-coloring speedups, validated on Arduino &amp; Raspberry Pi to prove control techniques in on-board applications.</p>
-            <div class="tags"><span>C++</span><span>Embedded</span><span>Graph Coloring</span></div>
+            <h3>Multi-Impulse Cislunar Trajectory Optimization with Jacobian Coloring</h3>
+            <p>A multiple-shooting, multi-impulse framework for minimum-Δv cislunar trajectory optimization, combining impulse regularization, complex-step sensitivities, and Jacobian coloring. By exploiting the constraint Jacobian's sparsity, coloring cuts per-iteration function evaluations (52 → 14 for a five-node transfer) for a ~2× speed-up, generating families of locally-optimal transfers between southern L<sub>2</sub> halo orbits — the best exploiting a lunar gravity assist.</p>
+            <div class="tags"><span>Trajectory Opt</span><span>Jacobian Coloring</span><span>Cislunar</span></div>
             <div class="project__links">
               <a href="#pub-coloring" class="paper-jump">Paper ↓</a>
               <a href="#" class="slides-link" data-folder="assets/slides/jacobian-coloring">Slides ▸</a>
@@ -208,7 +208,7 @@
           <div class="project__media" style="--g1:#3a2350; --g2:#1b4a6b;">📡</div>
           <div class="project__body">
             <h3>Attitude Estimation from Accelerometers</h3>
-            <p>Estimating spacecraft attitude and angular rate from an array of accelerometers, using linear least squares to recover functions quadratic in angular velocity. Establishes minimum sensor requirements and a linearized covariance approximation that matches Monte-Carlo results.</p>
+            <p>A gyro-free method for determining a spacecraft's angular velocity and acceleration from an array of triaxial accelerometers, using linear least squares to estimate functions quadratic in angular velocity. Establishes minimum sensor requirements, a way to resolve the spin-axis sign, and a linearized covariance approximation that matches Monte-Carlo results.</p>
             <div class="tags"><span>Least Squares</span><span>Covariance Analysis</span><span>Estimation</span></div>
             <div class="project__links">
               <a href="#pub-attitude" class="paper-jump">Paper ↓</a>
