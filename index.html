@@ -14,18 +14,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
   <title>Koya Yamamoto — Aerospace Engineer & PhD Candidate</title>
   <meta name="description" content="Koya Yamamoto — PhD candidate in Aerospace Engineering at Texas A&M. Research in guidance, navigation, control, cislunar trajectory optimization, and state estimation." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
 </head>
 <body>
 
   <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="sun" aria-hidden="true"></div>
 
   <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
@@ -43,6 +45,7 @@
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
         <a href="assets/CV.pdf" class="nav__cv" target="_blank" rel="noopener">CV ↗</a>
+        <button class="nav__theme" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle light / dark">☀️</button>
       </nav>
     </div>
   </header>
@@ -336,7 +339,10 @@
         <li class="pub reveal" id="pub-nmpc">
           <h3 class="pub__title">Nonlinear MPC for Cislunar Trajectory Correction Under Impulsive Maneuver Uncertainties: A Computational Performance Analysis</h3>
           <p class="pub__authors"><b>K. Yamamoto</b>, E. Taheri, J. L. Junkins</p>
-          <p class="pub__venue"><em>American Control Conference (ACC)</em>, 2026. <span class="pub__badge">To appear</span></p>
+          <p class="pub__venue"><em>2026 American Control Conference (ACC)</em>, IEEE, 2026.</p>
+          <div class="pub__links">
+            <a href="https://ieeexplore.ieee.org/document/11615962" target="_blank" rel="noopener">IEEE Xplore</a>
+          </div>
         </li>
 
         <li class="pub reveal" id="pub-coloring">
@@ -491,6 +497,6 @@
   <!-- Toast (e.g. "email copied") -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

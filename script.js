@@ -310,6 +310,30 @@
 })();
 
 /* ============================================================
-   7. Footer year
+   7. Theme toggle — dark by default; light reveals a rising sun.
+   ============================================================ */
+(function themeToggle() {
+  const root = document.documentElement;
+  const btn = document.getElementById("themeToggle");
+  function apply(theme) {
+    if (theme === "light") root.setAttribute("data-theme", "light");
+    else root.removeAttribute("data-theme");
+    if (btn) {
+      btn.textContent = theme === "light" ? "🌙" : "☀️";
+      btn.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
+    }
+  }
+  apply(localStorage.getItem("theme") === "light" ? "light" : "dark");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      apply(next);
+    });
+  }
+})();
+
+/* ============================================================
+   8. Footer year
    ============================================================ */
 document.getElementById("year").textContent = new Date().getFullYear();
